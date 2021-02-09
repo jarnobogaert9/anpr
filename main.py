@@ -52,8 +52,11 @@ def main():
     # handler.passive_ports = range(60000, 65535)
 
     # Instantiate FTP server class and listen on 0.0.0.0:2121
-    # address = ('0.0.0.0', 21)
-    address = ('127.0.0.1', 21)
+    # Use 0.0.0.0 if you want to make it accessible, so that everyone in the network can access the ftp server
+    address = ('0.0.0.0', 21)
+    
+    # Use 127.0.0.1 to test it locally
+    # address = ('127.0.0.1', 21)
     server = FTPServer(address, handler)
 
     # set a limit for connections
